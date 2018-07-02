@@ -1,0 +1,368 @@
+import pygame
+from random import randint
+
+pygame.init()
+ventana = pygame.display.set_mode([1000, 300])
+pygame.display.set_caption("Escaleras y Serpientes")
+salir = False
+miFuente = pygame.font.Font(None, 30)
+miFuente2=pygame.font.Font(None,50)
+miTexto = miFuente.render("ESCALERAS Y SERPIENTES", 0, (250, 250, 250))
+rect1 = pygame.Rect(850, 200, 300, 150)
+rect2 = pygame.Rect(850, 400, 300, 150)
+azul = (0, 0, 139)
+negro = (0, 0, 0)
+morado = (138, 43, 226)
+marron = (148, 99, 30)
+blanco = (250, 250, 250)
+verde=(127,255,0)
+naranja=(255,97,3)
+verdelima=(50,205,50)
+dimensiones=[800,800]
+ancho=int(dimensiones[0]/8)
+alto=int(dimensiones[1]/8)
+recuadro1=miFuente.render("Jugador 1:",0,(250,250,250))
+recuadro2=miFuente.render("Jugador 2:",0,(250,250,250))
+contador1=1
+contador2=1
+dado=randint(1,7)
+turno=0
+pos=(50, 640)
+pos1=(50, 670)
+cas=miFuente.render("Posicion: ",0,(250,250,250))
+resul1=miFuente.render("",0,(250,250,250))
+resul2=miFuente.render("",0,(250,250,250))
+intrucciones=miFuente.render("Presiona KEYDOWN para tirar el dado",0,(250,250,250))
+pantalla = pygame.display.set_mode((1500, 700))
+r1 = pygame.time.Clock()
+v1=miFuente.render("EL JUGADOR 1 GANO",0,(250,250,250))
+v2=miFuente.render("EL JUGADOR 2 GANO",0,(250,250,250))
+numero=miFuente.render("", 0, (250,250,250))
+dadon=miFuente.render("Dado:", 0, (250,250,250))
+while salir != True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            salir = True
+        if event.type == pygame.KEYDOWN:
+            dado=randint(1,6)
+            dadito=str(dado)
+
+            if turno%2==0:
+                contador1 += dado
+                contador1a = str(contador1)
+                resul1 = miFuente2.render(contador1a, 0, (250, 250, 250))
+                if contador1 >= 1:
+                    pos = (50, 630)
+                if contador1 >= 2:
+                    pos = (150, 630)
+                if contador1 >= 3:
+                    pos = (250, 630)
+                if contador1 >= 4:
+                    pos = (350, 630)
+                    pygame.time.wait(20)
+                if contador1 >= 5:
+                    pos = (450, 630)
+                if contador1 >= 6:
+                    pos = (550, 630)
+                if contador1 >= 7:
+                    pos = (650, 630)
+                if contador1 >= 8:
+                    pos = (750, 630)
+                if contador1 >= 9:
+                    pos = (750, 530)
+                if contador1 >= 10:
+                    pos = (650, 530)
+                if contador1 >= 11:
+                    pos = (550, 530)
+                if contador1 >= 12:
+                    pos = (450, 530)
+                if contador1 >= 13:
+                    pos = (350, 530)
+                if contador1 >= 14:
+                    pos = (250, 530)
+                if contador1 >= 15:
+                    pos = (150, 530)
+                if contador1 >= 16:
+                    pos = (50, 530)
+                if contador1 >= 17:
+                    pos = (50, 430)
+                if contador1 >= 18:
+                    pos = (150, 430)
+                if contador1 >= 19:
+                    pos = (250, 430)
+                if contador1 >= 20:
+                    pos = (350, 430)
+                if contador1 >= 21:
+                    pos = (450, 430)
+                if contador1 >= 22:
+                    pos = (550, 430)
+                if contador1 >= 23:
+                    pos = (650, 430)
+                if contador1 >= 24:
+                    pos = (750, 430)
+                if contador1 >= 25:
+                    pos = (750, 330)
+                if contador1 >= 26:
+                    pos = (650, 330)
+                if contador1 >= 27:
+                    pos = (550, 330)
+                if contador1 >= 28:
+                    pos = (450, 330)
+                if contador1 >= 29:
+                    pos = (350, 330)
+                if contador1 >= 30:
+                    pos = (250, 330)
+                if contador1 >= 31:
+                    pos = (150, 330)
+                if contador1 >= 32:
+                    pos = (50, 330)
+                if contador1 >= 33:
+                    pos = (50, 230)
+                if contador1 >= 34:
+                    pos = (150, 230)
+                if contador1 >= 35:
+                    pos = (250, 230)
+                if contador1 >= 36:
+                    pos = (350, 230)
+                if contador1 >= 37:
+                    pos = (450, 230)
+                if contador1 >= 38:
+                    pos = (550, 230)
+                if contador1 >= 39:
+                    pos = (650, 230)
+                if contador1 >= 40:
+                    pos = (750, 230)
+                if contador1 >= 41:
+                    pos = (750, 130)
+                if contador1 >= 42:
+                    pos = (650, 130)
+                if contador1 >= 43:
+                    pos = (550, 130)
+                if contador1 >= 44:
+                    pos = (450, 130)
+                if contador1 >= 45:
+                    pos = (350, 130)
+                if contador1 >= 46:
+                    pos = (250, 130)
+                if contador1 >= 47:
+                    pos = (150, 130)
+                if contador1 >= 48:
+                    pos = (50, 30)
+                if contador1 >= 49:
+                    pos = (50, 30)
+                if contador1 >= 50:
+                    pos = (150, 30)
+                if contador1 >= 51:
+                    pos = (250, 30)
+                if contador1 >= 52:
+                    pos = (350, 30)
+                if contador1 >= 53:
+                    pos = (450, 30)
+                if contador1 >= 54:
+                    pos = (550, 30)
+                if contador1 >= 55:
+                    pos = (650, 30)
+                if contador1 >= 56:
+                    pos = (750, 30)
+                if contador1 >= 57:
+                    pos = (750, 30)
+
+                if pos == (150, 30):
+                    contador1 = 21
+                if pos == (150, 230):
+                    contador1 = 13
+                if pos == (250, 530):
+                    contador1 = 38
+                if pos == (150, 430):
+                    contador1 = 45
+                if pos == (350, 330):
+                    contador1 = 54
+                if pos == (650, 430):
+                    contador1 = 44
+                    ventana.blit(v1, (850, 500))
+            else:
+                contador2 += dado
+                contador2a = str(contador2)
+                resul2 = miFuente2.render(contador2a, 0, (250, 250, 250))
+                if contador2 == 1:
+                    pos1 = (50, 630)
+                if contador2 == 2:
+                    pos1 = (150, 630)
+                if contador2 == 3:
+                    pos1 = (250, 630)
+                if contador2 == 4:
+                    pos1 = (350, 630)
+                if contador2 == 5:
+                    pos1 = (450, 630)
+                if contador2 == 6:
+                    pos1 = (550, 630)
+                if contador2 == 7:
+                    pos1 = (650, 630)
+                if contador2 == 8:
+                    pos1 = (750, 630)
+                if contador2 == 9:
+                    pos1 = (750, 530)
+                if contador2 == 10:
+                    pos1 = (650, 530)
+                if contador2 == 11:
+                    pos1 = (550, 530)
+                if contador2 == 12:
+                    pos1 = (450, 530)
+                if contador2 == 13:
+                    pos1 = (350, 530)
+                if contador2 == 14:
+                    pos1 = (250, 530)
+                if contador2 == 15:
+                    pos1 = (150, 530)
+                if contador2 == 16:
+                    pos1 = (50, 530)
+                if contador2 == 17:
+                    pos1 = (50, 430)
+                if contador2 == 18:
+                    pos1 = (150, 430)
+                if contador2 == 19:
+                    pos1 = (250, 430)
+                if contador2 == 20:
+                    pos1 = (350, 430)
+                if contador2 == 21:
+                    pos1 = (450, 430)
+                if contador2 == 22:
+                    pos1 = (550, 430)
+                if contador2 == 23:
+                    pos1 = (650, 430)
+                if contador2 == 24:
+                    pos1 = (750, 430)
+                if contador2 == 25:
+                    pos1 = (750, 330)
+                if contador2 == 26:
+                    pos1 = (650, 330)
+                if contador2 == 27:
+                    pos1 = (550, 330)
+                if contador2 == 28:
+                    pos1 = (450, 330)
+                if contador2 == 29:
+                    pos1 = (350, 330)
+                if contador2 == 30:
+                    pos1 = (250, 330)
+                if contador2 == 31:
+                    pos1 = (150, 330)
+                if contador2 == 32:
+                    pos1 = (50, 330)
+                if contador2 == 33:
+                    pos1 = (50, 230)
+                if contador2 == 34:
+                    pos1 = (150, 230)
+                if contador2 == 35:
+                    pos1 = (250, 230)
+                if contador2 == 36:
+                    pos1 = (350, 230)
+                if contador2 == 37:
+                    pos1 = (450, 230)
+                if contador2 == 38:
+                    pos1 = (550, 230)
+                if contador2 == 39:
+                    pos1 = (650, 230)
+                if contador2 == 40:
+                    pos1 = (750, 230)
+                if contador2 == 41:
+                    pos1 = (750, 130)
+                if contador2 == 42:
+                    pos1 = (650, 130)
+                if contador2 == 43:
+                    pos1 = (550, 130)
+                if contador2 == 44:
+                    pos1 = (450, 130)
+                if  contador2 == 45:
+                    pos1 = (350, 130)
+                if contador2 == 46:
+                    pos1 = (250, 130)
+                if contador2 == 47:
+                    pos1 = (150, 130)
+                if contador2 == 48:
+                    pos1 = (50, 130)
+                if contador2 == 49:
+                    pos1 = (50, 30)
+                if contador2 == 50:
+                    pos1 = (150, 30)
+                if contador2 == 51:
+                    pos1 = (250, 30)
+                if contador2 == 52:
+                    pos1 = (350, 30)
+                if contador2 == 53:
+                    pos1 = (450, 30)
+                if contador2 == 54:
+                    pos1 = (550, 30)
+                if contador2 == 55:
+                    pos1 = (650, 30)
+                if contador2 == 56:
+                    pos1 = (750, 30)
+                if contador2 == 57:
+                    pos1 = (50, 30)
+                if contador2 == 58:
+                    pos1 = (150, 30)
+                if contador2 == 59:
+                    pos1 = (250, 30)
+                if contador2 == 60:
+                    pos1 = (350, 30)
+                if contador2 == 61:
+                    pos1 = (450, 30)
+                if contador2 == 62:
+                    pos1 = (550, 30)
+                if contador2 == 63:
+                    pos1 = (650, 30)
+                if contador2 >= 64:
+                    pos1 = (750, 30)
+
+                if pos1 == (150, 30):
+                    contador2 = 21
+                if pos1 == (150, 230):
+                    contador2 = 13
+                if pos1 == (250, 530):
+                    contador2 = 38
+                if pos1 == (150, 430):
+                    contador2 = 45
+                if pos1 == (350, 330):
+                    contador2 = 54
+                if pos1 == (650, 430):
+                    contador2 = 44
+                    ventana.blit(v2, (850, 500))
+            turno+=1
+    r1.tick(20)
+    color = 0
+
+    for i in range(0, dimensiones[0], ancho):
+        for j in range(0, dimensiones[1], alto):
+            if color % 2 == 0:
+                pygame.draw.rect(pantalla, verdelima, [i, j, ancho, alto], 0)
+            else:
+                pygame.draw.rect(pantalla, blanco, [i, j, ancho, alto], 0)
+            color += 1
+        color += 1
+    pygame.display.flip()
+    #ficha1
+    pygame.draw.circle(ventana, negro, pos, 20, 0)
+    #ficha2
+    pygame.draw.circle(ventana, naranja, pos1 , 20, 0)
+    pygame.draw.rect(ventana, azul, rect1)
+    pygame.draw.rect(ventana, azul, rect2)
+    ventana.blit(intrucciones,(810,150))
+    ventana.blit(miTexto, (850, 100))
+    ventana.blit(recuadro1,(850,200))
+    ventana.blit(recuadro2,(850,400))
+    ventana.blit(numero, (930, 600))
+    ventana.blit(resul1, (1000, 270))
+    ventana.blit(resul2, (1000, 460))
+    ventana.blit(cas, (900, 270))
+    ventana.blit(cas, (900, 460))
+
+    pygame.draw.line(ventana,verde,(150,30),(450,430),30)
+    pygame.draw.line(ventana,verde,(150,230),(350,530),30)
+    pygame.draw.line(ventana,verde,(250,530),(550,230),30)
+
+    pygame.draw.line(ventana,marron,(150,430),(350,130),30)
+    pygame.draw.line(ventana,marron,(350,330),(550,30),30)
+    pygame.draw.line(ventana,marron,(650,430),(450,130),30)
+
+    pygame.display.flip()
+
+pygame.quit()
